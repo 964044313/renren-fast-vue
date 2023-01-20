@@ -40,7 +40,8 @@
         ></el-select>
       </el-form-item>
       <el-form-item label="属性图标" prop="icon">
-        <el-input v-model="dataForm.icon" placeholder="属性图标"></el-input>
+        <!--        <el-input v-model="dataForm.icon" placeholder="属性图标"></el-input>-->
+        <single-upload v-model="dataForm.icon"></single-upload>
       </el-form-item>
       <el-form-item label="所属分类" prop="catelogId">
         <category-cascader ref="categoryRef" :catelogPath.sync="catelogPath"></category-cascader>
@@ -92,6 +93,8 @@
 
 <script>
 import CategoryCascader from "../common/category-cascader";
+import SingleUpload from '../../../components/upload/singleUpload'
+
 
 export default {
   data() {
@@ -204,7 +207,7 @@ export default {
       }
     },
   },
-  components: {CategoryCascader},
+  components: {CategoryCascader, SingleUpload},
   methods: {
     change(v1) {
       console.log(v1, this.dataForm.valueType)
