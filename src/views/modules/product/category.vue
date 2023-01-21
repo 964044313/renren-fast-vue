@@ -255,7 +255,6 @@ export default {
         method: "get"
       }).then(({data}) => {
         //请求成功
-        console.log("要回显的数据", data);
         this.category.name = data.data.name;
         this.category.catId = data.data.catId;
         this.category.icon = data.data.icon;
@@ -273,7 +272,6 @@ export default {
       });
     },
     append(data) {
-      console.log("append", data);
       this.dialogType = "add";
       this.title = "添加分类";
       this.dialogVisible = true;
